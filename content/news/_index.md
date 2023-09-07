@@ -1,0 +1,79 @@
+---
+title: "news"
+date: 2020-11-20T17:51:47+03:30
+draft: false
+headless: true
+
+# all icons by [feathericons.com](https://feathericons.com/) are supported
+show_news_icons: true
+default_news_icon: "file-text"
+
+num_news: 6
+
+news_items:
+- text: "Part of the Scientific Committee of the [EARSeL 2024 conference in Manchester](https://manchester2024.earsel.org/)"
+  extra_text: ""
+  date: 2023-09-06
+  icon: "user-plus"
+- text: "New 3-year F.R.S.-FNRS project on medium-scale farms in Sub-Saharan Africa"
+  extra_text: ""
+  date: 2023-06-25
+  icon: "award"
+- text: "ESA Third Party Mission Grant to access SPOT6/7 data for Mozambique and Nigeria"
+  extra_text: ""
+  date: 2023-06-05
+  icon: "award"
+- text: "New collaboration with [Dr. Akinyemi](https://www.geography.unibe.ch/about_us/staff/dr_akinyemi_felicia_o/index_eng.html#pane950731) on mapping mixed maize-cassava cropping"
+  extra_text: ""
+  date: 2023-03-05
+  icon: "user-plus"
+- text: "Ranked Top 20% in [NASA Harvest Field Boundary Detection Challenge](https://zindi.africa/competitions/nasa-harvest-field-boundary-detection-challenge)"
+  extra_text: ""
+  date: 2023-02-15
+  icon: "code"
+- text: "Co-authored papers on [soybean supply chains](https://doi.org/10.1016/j.gloenvcha.2022.102633), [bats](https://doi.org/10.4404/hystrix-00541-2022) & [interdisciplinary research](https://doi.org/10.1007/s11625-022-01271-3)"
+  extra_text: ""
+  date: 2023-01-03
+  icon: "users"
+- text: "Bye bye bird site, hello [mapstodon.space](https://mapstodon.space/@philrufin)"
+  extra_text: ""
+  date: 2022-12-01
+  icon: "map"
+- text: "[Paper](https://doi.org/10.1016/j.jag.2022.102937) & [data](https://doi.org/10.5281/zenodo.6907605) on large-area mapping of smallholder landscapes using PlanetScope data published"
+  extra_text: ""
+  date: 2022-07-26
+  icon: "file-text"
+- text: "[GEE Time Series Explorer](https://geetimeseriesexplorer.readthedocs.io/en/latest/) version 2 released"
+  extra_text: ""
+  date: 2022-07-01
+  icon: "code"
+- text: "[ERC MIDLAND blog post](https://erc-midland.earth/2022/05/23/machambas/) on smallholder fields"
+  extra_text: ""
+  date: 2022-05-23
+  icon: "align-left"
+- text: "Presenting smallholder mapping works at [ESA Living Planet Symposium '22](https://express.converia.de/frontend/index.php?page_id=18446&v=AuthorList&do=17&day=all&q=rufin&entity_id=369598)"
+  extra_text: ""
+  date: 2022-05-23
+  icon: "user"
+- text: "Paper: [Replicability of past long-term vegetation dynamics studies](https://doi.org/10.3390/rs14030597)"
+  extra_text: ""
+  date: 2022-03-11
+  icon: "file-text"
+- text: "Completed UAV imaging campaign in Northern Mozambique"
+  extra_text: "Joint effort of UCLouvain & Universidade Eduardo Mondlane"
+  date: 2021-11-03
+  icon: "globe"
+- text: "Joining [Earth & Life Institute](https://uclouvain.be/en/research-institutes/eli)"
+  extra_text: "F.R.S.-FNRS Fellowship"
+  date: 2021-09-18
+  icon: "user-plus"
+- text: "FOSS4G Presentation available online"
+  date: 2021-12-18
+  link: "https://www.youtube.com/watch?v=2y8CDmDUpWo"
+  icon: "youtube"
+- text: "On shortlist for 2020 Teaching Award"
+  extra_text: "Humboldt-University Berlin"
+  link: "https://bolognalab.hu-berlin.de/de/bolognalab/preis/finalist_innen/finalisten/copy_of_startpage"
+  icon: "award"
+  date: 2021-10-25
+---
