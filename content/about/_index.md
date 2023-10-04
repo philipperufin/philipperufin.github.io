@@ -46,13 +46,13 @@ academia:
         end_date: "2023"
     - course:
         degree: "Postdoctoral Fellow | "
-        institution:  "Earth Obseration Lab, Humboldt-Universität zu Berlin"
+        institution:  "Earth Observation Lab, Humboldt-Universität"
         major: "Large-area agriculture mapping"
         start_date: "2019"
         end_date: "2021"
     - course:
         degree: "Ph.D."
-        institution:  "Earth Obseration Lab, Humboldt-Universität zu Berlin"
+        institution:  "Earth Observation Lab, Humboldt-Universität"
         major: "Geography | Earth Observation"
         start_date: "2015"
         end_date: "2019"
