@@ -23,6 +23,7 @@ interests:
     - Land System Science
     - Earth Observation
     - Machine Learning
+    - Geospatial Data Science
     - Open Science
 
 affiliations:
@@ -70,4 +71,4 @@ academia:
 #        end_date: "2011"
 ---
 
-I´m a Geographer interested in linking Land System Science and Earth Observation. My work involves the development and application of methods for large-area mapping of land use and land use intensity. Currently, I´m working on mapping the dynamics of cropland, field size, and land use intensity in Sub-Saharan Africa using deep learning and very high spatial resolution satellite imagery.
+Geographer interested in linking Land System Science and Earth Observation. My work involves the development and application of methods for large-area mapping of land use and land use intensity based on machine learning. Currently, I´m working on mapping the dynamics of cropland, field size, and land use intensity in Sub-Saharan Africa using deep learning and very high spatial resolution satellite imagery.
