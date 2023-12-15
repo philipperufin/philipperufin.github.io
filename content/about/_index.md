@@ -5,7 +5,7 @@ draft: false
 headless: true
 
 full_name: "Philippe Rufin"
-profile_picture: "profile.jpg"
+profile_picture: "profile.png"
 cv: "cv.pdf"
 # set to false if you don't want to show your blog
 blog: false

@@ -11,7 +11,11 @@ default_news_icon: "file-text"
 num_news: 6
 
 news_items:
-- text: "Part of the Scientific Committee of the [EARSeL 2024 conference in Manchester](https://manchester2024.earsel.org/)"
+- text: "Pre-print on [transfer learning for smallholder field delineation](https://doi.org/10.48550/arXiv.2312.08384)"
+  extra_text: ""
+  date: 2023-12-15
+  icon: "user-plus"
+- text: "Scientific Committee Member for [EARSeL 2024 conference in Manchester](https://manchester2024.earsel.org/)"
   extra_text: ""
   date: 2023-09-06
   icon: "user-plus"
