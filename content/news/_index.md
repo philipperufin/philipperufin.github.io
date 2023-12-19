@@ -14,7 +14,11 @@ news_items:
 - text: "Pre-print on [transfer learning for smallholder field delineation](https://doi.org/10.48550/arXiv.2312.08384)"
   extra_text: ""
   date: 2023-12-15
-  icon: "user-plus"
+  icon: "file-text"
+- text: "Pre-print on on [mapping mixed maize-cassava cropping](https://doi.org/10.31223/X57T2M) led by [Dr. Akinyemi](https://www.kau.se/personal/felicia-akinyemi)"
+  extra_text: ""
+  date: 2023-12-14
+  icon: "file-text"
 - text: "Scientific Committee Member for [EARSeL 2024 conference in Manchester](https://manchester2024.earsel.org/)"
   extra_text: ""
   date: 2023-09-06
@@ -27,10 +31,6 @@ news_items:
   extra_text: ""
   date: 2023-06-05
   icon: "award"
-- text: "New collaboration with [Dr. Akinyemi](https://www.geography.unibe.ch/about_us/staff/dr_akinyemi_felicia_o/index_eng.html#pane950731) on mapping mixed maize-cassava cropping"
-  extra_text: ""
-  date: 2023-03-05
-  icon: "user-plus"
 - text: "Ranked Top 20% in [NASA Harvest Field Boundary Detection Challenge](https://zindi.africa/competitions/nasa-harvest-field-boundary-detection-challenge)"
   extra_text: ""
   date: 2023-02-15
