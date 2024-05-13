@@ -13,9 +13,9 @@ num_news: 6
 news_items:
 - text: "Presenting EO for smallholder agriculture at [ESA EO4Africa Symposium](https://eo4society.esa.int/event/eo-for-africa-symposium-2024/), [IAMO Forum](https://forum2024.iamo.de/), [GLP OSM #5](https://event.fourwaves.com/osm2024/pages)"
   extra_text: ""
-  date: 2022-05-23
+  date: 2024-05-13
   icon: "user"
-- text: "Pre-print on [linking field size to farm size](https://doi.org/10.31220/agriRxiv.2024.00245)"
+- text: "Pre-print on [linking field size to farm size](https://doi.org/10.31220/agriRxiv.2024.00245) led by Clemens Jänicke & Max Wesemeyer"
   extra_text: ""
   date: 2024-04-24
   icon: "file-text"
