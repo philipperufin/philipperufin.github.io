@@ -11,6 +11,14 @@ default_news_icon: "file-text"
 num_news: 6
 
 news_items:
+- text: "Presenting EO for smallholder agriculture at [ESA EO4Africa Symposium](https://eo4society.esa.int/event/eo-for-africa-symposium-2024/), [IAMO Forum](https://forum2024.iamo.de/), [GLP OSM #5](https://event.fourwaves.com/osm2024/pages)"
+  extra_text: ""
+  date: 2022-05-23
+  icon: "user"
+- text: "Pre-print on [linking field size to farm size](https://doi.org/10.31220/agriRxiv.2024.00245)"
+  extra_text: ""
+  date: 2024-04-24
+  icon: "file-text"
 - text: "Pre-print on [transfer learning for smallholder field delineation](https://doi.org/10.48550/arXiv.2312.08384)"
   extra_text: ""
   date: 2023-12-15
