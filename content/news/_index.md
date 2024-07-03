@@ -11,7 +11,15 @@ default_news_icon: "file-text"
 num_news: 6
 
 news_items:
-- text: "Presenting EO for smallholder agriculture at [ESA EO4Africa Symposium](https://eo4society.esa.int/event/eo-for-africa-symposium-2024/), [IAMO Forum](https://forum2024.iamo.de/), [GLP OSM #5](https://event.fourwaves.com/osm2024/pages)"
+- text: "Session on monitoring ag transitions using EO and microeconomic data @ [GLP OSM #5 (ID 203R)](https://event.fourwaves.com/osm2024/pages/87ecbf71-94e6-4944-bd38-1d3932ff6736)"
+  extra_text: ""
+  date: 2024-06-11
+  icon: "user"
+- text: "Pre-print on [responsible AI for Earth Observation](https://doi.org/10.48550/arXiv.2405.20868) led by Pedram Ghamisi"
+  extra_text: ""
+  date: 2024-05-31
+  icon: "file-text"
+- text: "Talks on EO for smallholder agriculture at [ESA EO4Africa Symposium](https://eo4society.esa.int/event/eo-for-africa-symposium-2024/), [IAMO Forum](https://forum2024.iamo.de/) & [GLP OSM #5](https://event.fourwaves.com/osm2024/pages)"
   extra_text: ""
   date: 2024-05-13
   icon: "user"
