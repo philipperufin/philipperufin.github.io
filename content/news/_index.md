@@ -11,6 +11,10 @@ default_news_icon: "file-text"
 num_news: 6
 
 news_items:
+- text: "New ESA project: EOAgriTwin: Earth Observation based Digital Twin for Resilient Agriculture under Multiple Stressors"
+  extra_text: ""
+  date: 2024-11-01
+  icon: "folder-plus"
 - text: "Session on monitoring ag transitions using EO and microeconomic data @ [GLP OSM #5 (ID 203R)](https://whova.com/embedded/session/rKIwz-4rzQneimOEsQrANL3LgJxVMLyYgaILW%4003DG8%3D/4141125/?widget=primary)"
   extra_text: ""
   date: 2024-10-05
