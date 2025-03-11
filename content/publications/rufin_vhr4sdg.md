@@ -1,5 +1,5 @@
 ---
-title: "Taking it further: Leveraging pseudo-labels for field delineation across label-scarce smallholder regions"
+title: "To enhance sustainable development goal research, open up commercial satellite image archives"
 authors:
 - Philippe Rufin
 - Patrick Meyfroidt
