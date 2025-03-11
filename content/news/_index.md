@@ -8,7 +8,7 @@ headless: true
 show_news_icons: true
 default_news_icon: "file-text"
 
-num_news: 6
+num_news: 7
 
 news_items:
 - text: "Paper on [responsible AI for Earth Observation](https://doi.org/10.1109/MGRS.2025.3529726) published"
