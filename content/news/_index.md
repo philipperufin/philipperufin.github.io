@@ -11,6 +11,18 @@ default_news_icon: "file-text"
 num_news: 6
 
 news_items:
+- text: "Paper on [responsible AI for Earth Observation](https://doi.org/10.1109/MGRS.2025.3529726) published"
+  extra_text: ""
+  date: 2025-02-21
+  icon: "file-text"
+- text: "PNAS opinion piece on [EO for SDG2](https://doi.org/10.1073/pnas.2410246122)"
+  extra_text: ""
+  date: 2025-02-12
+  icon: "file-text"
+- text: "EO Africa R&D Project [SEN4MOZ](https://eolab.geographie.hu-berlin.de/research_projects/sen4moz/)"
+  extra_text: ""
+  date: 2025-01-20
+  icon: "folder-plus"
 - text: "New ESA project: EOAgriTwin: Earth Observation based Digital Twin for Resilient Agriculture under Multiple Stressors"
   extra_text: ""
   date: 2024-11-01
@@ -19,10 +31,6 @@ news_items:
   extra_text: ""
   date: 2024-10-05
   icon: "user"
-- text: "Pre-print on [responsible AI for Earth Observation](https://doi.org/10.48550/arXiv.2405.20868) led by Pedram Ghamisi"
-  extra_text: ""
-  date: 2024-09-01
-  icon: "file-text"
 - text: "Paper on [transfer learning for smallholder field delineation](https://doi.org/10.1016/j.jag.2024.104149)"
   extra_text: ""
   date: 2023-12-15
