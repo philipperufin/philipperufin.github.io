@@ -176,7 +176,7 @@ h2 code {
 }
 
 .publication .separator {
-    margin-left: 0%;
+    margin-left: +1%;
 }
 
 .projects .project {
