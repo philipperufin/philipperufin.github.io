@@ -11,6 +11,10 @@ default_news_icon: "file-text"
 num_news: 7
 
 news_items:
+- text: "ESA Living Planet Symposium 2025 featured [EOAgriTwin](https://www.eoagritwin.eu/), [SEN4MOZ](https://eolab.geographie.hu-berlin.de/research_projects/sen4moz/), & [Field delineation](https://lps25.esa.int/programme/programme-session/?id=E875B12D-BF45-4F89-9DED-EA77AC576E97&presentationId=A2FE7BEE-F3FE-4FC7-B6BA-9AEE88B7BDDB) work"
+  extra_text: ""
+  date: 2025-06-23
+  icon: "user"
 - text: "Paper on [responsible AI for Earth Observation](https://doi.org/10.1109/MGRS.2025.3529726) published"
   extra_text: ""
   date: 2025-02-21
