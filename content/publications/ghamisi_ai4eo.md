@@ -1,5 +1,5 @@
 ---
-title: "Responsible Artificial Intelligence for Earth Observation: Achievable and realistic paths to serve the collective good"
+title: "Responsible Artificial Intelligence for Earth Observation"
 authors:
 
 - Pedram Ghamisi
