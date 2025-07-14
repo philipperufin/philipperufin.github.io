@@ -8,9 +8,13 @@ headless: true
 show_news_icons: true
 default_news_icon: "file-text"
 
-num_news: 7
+num_news: 6
 
 news_items:
+- text: "Pre-print on [national scale field delineation in smallholder landscapes](https://arxiv.org/) out on arXiv."
+  extra_text: ""
+  date: 2025-07-14
+  icon: "file-text"
 - text: "ESA Living Planet Symposium 2025 featured [EOAgriTwin](https://www.eoagritwin.eu/), [SEN4MOZ](https://eolab.geographie.hu-berlin.de/research_projects/sen4moz/), & [Field delineation](https://lps25.esa.int/programme/programme-session/?id=E875B12D-BF45-4F89-9DED-EA77AC576E97&presentationId=A2FE7BEE-F3FE-4FC7-B6BA-9AEE88B7BDDB) work"
   extra_text: ""
   date: 2025-06-23
@@ -43,7 +47,7 @@ news_items:
   extra_text: ""
   date: 2024-05-13
   icon: "user"
-- text: "Pre-print on on [mapping mixed maize-cassava cropping](https://doi.org/10.31223/X57T2M) led by [Dr. Akinyemi](https://www.kau.se/personal/felicia-akinyemi)"
+- text: "Pre-print on [mapping mixed maize-cassava cropping](https://doi.org/10.31223/X57T2M) led by [Dr. Akinyemi](https://www.kau.se/personal/felicia-akinyemi)"
   extra_text: ""
   date: 2023-12-14
   icon: "file-text"

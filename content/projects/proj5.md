@@ -1,5 +1,5 @@
 ---
-title: "EOAfrica R&D: SEN4MOZ"
+title: "SEN4MOZ: Mapping Shifting Cultivation Dynamics in Conservation Areas of Mozambique using Copernicus Data (ESA EOAfrica R&D)"
 
 date: "2024-12-01"
 
