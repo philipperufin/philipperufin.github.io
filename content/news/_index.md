@@ -11,7 +11,7 @@ default_news_icon: "file-text"
 num_news: 6
 
 news_items:
-- text: "Pre-print on [national scale field delineation in smallholder landscapes](https://arxiv.org/) out on arXiv."
+- text: "Pre-print on [national scale field delineation in smallholder landscapes](https://arxiv.org/abs/2507.10499) out on arXiv."
   extra_text: ""
   date: 2025-07-14
   icon: "file-text"
