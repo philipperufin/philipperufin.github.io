@@ -11,6 +11,14 @@ default_news_icon: "file-text"
 num_news: 6
 
 news_items:
+- text: "Upcoming SEN4MOZ field work in conservation areas of Mozambique"
+  extra_text: ""
+  date: 2025-09-25
+  icon: "globe"
+- text: "Pre-print: [Is field size an indicator of farm size in smallholder-dominated croplands?](https://doi.org/10.31220/agriRxiv.2025.00365)?"
+  extra_text: ""
+  date: 2025-09-25
+  icon: "file-text"
 - text: "Pre-print on [national scale field delineation in smallholder landscapes](https://arxiv.org/abs/2507.10499) out on arXiv."
   extra_text: ""
   date: 2025-07-14
