@@ -11,7 +11,7 @@ default_news_icon: "file-text"
 num_news: 6
 
 news_items:
-- text: "Upcoming SEN4MOZ field work in conservation areas of Mozambique"
+- text: "Upcoming [SEN4MOZ](https://eolab.geographie.hu-berlin.de/research_projects/sen4moz/) field work in conservation areas of Mozambique"
   extra_text: ""
   date: 2025-09-25
   icon: "globe"
