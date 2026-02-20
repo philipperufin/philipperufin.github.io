@@ -8,12 +8,24 @@ headless: true
 show_news_icons: true
 default_news_icon: "file-text"
 
-num_news: 6
+num_news: 10
 
 news_items:
-- text: "Upcoming [SEN4MOZ](https://eolab.geographie.hu-berlin.de/research_projects/sen4moz/) field work in conservation areas of Mozambique"
+- text: "Pre-print on mapping organic agriculture with Sentinel-2 out soon!"
   extra_text: ""
-  date: 2025-09-25
+  date: 2026-02-20
+  icon: "file-text"
+- text: "Paper on [crop water consumption in Central Asia](https://doi.org/10.1038/s43247-025-03142-y) out in Nature CommunEarthEnviron"
+  extra_text: ""
+  date: 2026-01-08
+  icon: "file-text"
+- text: "Pre-print on [geospatial foundation models for flood mapping](https://arxiv.org/pdf/2512.02055)!"
+  extra_text: ""
+  date: 2025-11-27
+  icon: "file-text"
+- text: "Returning from a successful field work in Gilé National Park, Mozambique"
+  extra_text: ""
+  date: 2025-10-25
   icon: "globe"
 - text: "Pre-print: [Is field size an indicator of farm size in smallholder-dominated croplands?](https://doi.org/10.31220/agriRxiv.2025.00365)?"
   extra_text: ""
