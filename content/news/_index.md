@@ -11,6 +11,14 @@ default_news_icon: "file-text"
 num_news: 10
 
 news_items:
+- text: "Paper on field size for farm size estimation accepted in Environmental Research Food Systems!"
+  extra_text: ""
+  date: 2026-02-22
+  icon: "file-text"
+- text: "Pre-print on mapping floodplain croplands with sensor fusion out soon!"
+  extra_text: ""
+  date: 2026-02-20
+  icon: "file-text"
 - text: "Pre-print on mapping organic agriculture with Sentinel-2 out soon!"
   extra_text: ""
   date: 2026-02-20
