@@ -11,17 +11,13 @@ default_news_icon: "file-text"
 num_news: 10
 
 news_items:
-- text: "Paper on field size for farm size estimation accepted in Environmental Research Food Systems!"
+- text: "ArXiv pre-print on [mapping organic agriculture with Sentinel-2](https://doi.org/10.48550/arXiv.2603.24552) out!"
+  extra_text: ""
+  date: 2026-03-16
+  icon: "file-text"
+- text: "Paper on [field size for farm size estimation](https://doi.org/10.1088/2976-601X/ae490a) in Environmental Research Food Systems!"
   extra_text: ""
   date: 2026-02-22
-  icon: "file-text"
-- text: "Pre-print on mapping floodplain croplands with sensor fusion out soon!"
-  extra_text: ""
-  date: 2026-02-20
-  icon: "file-text"
-- text: "Pre-print on mapping organic agriculture with Sentinel-2 out soon!"
-  extra_text: ""
-  date: 2026-02-20
   icon: "file-text"
 - text: "Paper on [crop water consumption in Central Asia](https://doi.org/10.1038/s43247-025-03142-y) out in Nature CommunEarthEnviron"
   extra_text: ""
