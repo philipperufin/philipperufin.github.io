@@ -8,7 +8,7 @@ full_name: "Philippe Rufin"
 profile_picture: "profile.png"
 cv: "cv.pdf"
 # set to false if you don't want to show your blog
-blog: false
+blog: true
 
 socials:
     #twitter: "philrufin"
@@ -18,6 +18,7 @@ socials:
     researchgate: 'Philippe-Rufin-2'
     orcid: '0000-0001-8919-1058'
     mastodon: '@philrufin'
+    bluesky: '@philrufin.bsky.social'
 
 interests:
     - Land System Science

@@ -24,3 +24,8 @@ startLevel = 1
 [params]
 # it is used for the copy-right section of your page
 name = "Philippe Rufin"
+
+[[params.social]]
+  name = "BlueSky"
+  icon = "bluesky"
+  url = "https://bsky.app/profile/yourhandle.bsky.social"
