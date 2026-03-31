@@ -19,6 +19,7 @@ socials:
     orcid: '0000-0001-8919-1058'
     mastodon: '@philrufin'
     bluesky: 'philrufin.bsky.social'
+    linkedin: 'philipperufin/'
 
 interests:
     - Land System Science

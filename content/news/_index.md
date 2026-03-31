@@ -11,6 +11,10 @@ default_news_icon: "file-text"
 num_news: 10
 
 news_items:
+- text: "Co-Coordinator [GLP Working Group on Remote Sensing for Land System Science](https://www.glp.earth/working-groups-0)"
+  extra_text: ""
+  date: 2026-03-31
+  icon: "user-plus"
 - text: "ArXiv pre-print on [mapping organic agriculture with Sentinel-2](https://doi.org/10.48550/arXiv.2603.24552) out!"
   extra_text: ""
   date: 2026-03-16
