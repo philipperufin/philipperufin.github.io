@@ -11,15 +11,12 @@
 
             <div class="section-1 w-100">
                 <span>
-                    {{$page.Params.title}},
+                    {{$page.Params.title}}.
                 </span>
-            </div>
-
-            <div class="section-2 text-muted w-100"></div>
+                <br>
                 <span class="text-muted publication-name">
                     {{$page.Params.publication}}
                 </span>
-
                 <span class="text-muted publication-date">
                     ({{substr ($page.Params.date.Format "2006-01-02") 0 4}})
                 </span>
@@ -32,12 +29,10 @@
                 {{ if $authors }}
                 {{range $i, $author := $authors}}
                 <span>
-                    {{$author}}
+                    {{- $author -}}
                 </span>
                 {{ if lt $i (sub (len $authors) 1)}}
-                <span class="separator">
-                   ,
-                </span>
+                <span class="separator">, </span>
                 {{end}}
                 {{end}}
                 {{end}}
