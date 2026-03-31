@@ -1,6 +1,6 @@
 ---
 title: "Remote Sensing of Dam-Induced Agricultural Change"
-
+funder: "Elsa Neumann Scholarship - Federal State of Berlin"
 date: "2019-03-30"
 
 links:

@@ -12,6 +12,10 @@
                 <span class="project-title">
                     {{$page.Params.title}}
                 </span>
+            {{ if $page.Params.funder }}
+                <br>
+                <span class="text-muted">{{$page.Params.funder}}</span>
+            {{ end }}
             </div>
 
             {{ $links := $page.Params.links }}
