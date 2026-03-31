@@ -32,7 +32,7 @@ affiliations:
     - affiliation:
         title: "F.R.S.-FNRS Postdoctoral Fellow"
         name: "Earth & Life Institute, UCLouvain"
-        email: "philippe.rufin@uclouvain.be"
+        email: "philippe.rufin[a]uclouvain.be"
 
 academia:
     - course:
@@ -73,4 +73,4 @@ academia:
 #        end_date: "2011"
 ---
 
-Geographer interested in linking Land System Science and Earth Observation. My work involves the development and application of methods for large-area mapping of land use and land use intensity based on machine learning. Currently, I´m working on mapping the dynamics of cropland, field size, and land use intensity in Sub-Saharan Africa using deep learning and very high spatial resolution satellite imagery.
+Geographer linking Land System Science and Earth Observation. I work the development and application of methods for large-area mapping of land use, its dynamics, and ecological impacts based on machine learning with a focus on sub-Saharan Africa.

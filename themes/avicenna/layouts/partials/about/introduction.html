@@ -48,6 +48,11 @@
         {{ $cv := $aboutPage.Params.cv }}
         {{ $blog := $aboutPage.Params.blog}}
 
+        {{if $orcid}}
+        <a class="main_color" rel="me" href='https://orcid.org/{{$orcid}}' target="_blank">
+            <i class="ai ai-2x ai-orcid academic_icons_customize"></i>
+        </a>
+        {{end}}
 
         {{if $google_scholar}}
         <a class="main_color" rel="me" href='https://scholar.google.com/{{$google_scholar}}' target="_blank">
@@ -61,12 +66,6 @@
         </a>
         {{end}}
 
-        {{if $orcid}}
-        <a class="main_color" rel="me" href='https://orcid.org/{{$orcid}}' target="_blank">
-            <i class="ai ai-2x ai-orcid academic_icons_customize"></i>
-        </a>
-        {{end}}
-       
         {{if $cv}}
         <a class="main_color" href='{{$cv}}' target="_blank">
             <i class="ai ai-2x ai-cv academic_icons_customize"></i>
@@ -87,7 +86,13 @@
             </svg>
         </a>
         {{end}}
-
+        
+        {{if $linkedin}}
+        <a class="main_color" rel="me" href='https://www.linkedin.com/in/{{$linkedin}}' target="_blank">
+            <i data-feather="linkedin"></i>
+        </a>
+        {{end}}
+        
         {{if $bluesky}}
         <a class="main_color" rel="me" href='https://bsky.app/profile/{{$bluesky}}' target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -96,19 +101,11 @@
         </a>
         {{end}}
 
-        {{if $linkedin}}
-        <a class="main_color" rel="me" href='https://www.linkedin.com/in/{{$linkedin}}' target="_blank">
-            <i data-feather="linkedin"></i>
-        </a>
-        {{end}}
-
         {{ if $blog }}
         <a id="blog_logo" class="main_color" href='/blog' target="_blank">
             <i class="ai ai-2x ai-blog academic_icons_customize">Blog</i>
-
         </a>
         {{ end }}
-
 
     </div>
 </div>
