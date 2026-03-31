@@ -1,5 +1,5 @@
 ---
-title: "Picture Your ML On Top. Read This And Make It So"
+title: "Blurry vision"
 
 tags: [ "deep_learning", "neural_networks", "ai"]
 

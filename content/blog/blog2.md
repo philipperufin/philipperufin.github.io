@@ -1,5 +1,5 @@
 ---
-title: "7 Ways To Keep Your ML Growing Without Burning The Midnight Oil"
+title: "Field work Gilé"
 date: 2019-06-07T16:04:19-07:00
 tags: [ "ml", "ai", "machine-learning", "deep-learning" ]
 
