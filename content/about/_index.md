@@ -73,4 +73,4 @@ academia:
 #        end_date: "2011"
 ---
 
-Geographer linking Land System Science and Earth Observation. I work the development and application of methods for large-area mapping of land use, its dynamics, and ecological impacts based on machine learning with a focus on sub-Saharan Africa.
+Geographer linking Land System Science and Earth Observation with a research focus on advancing methods for large-area mapping of land use, its dynamics, and ecological impacts with a focus on sub-Saharan Africa.
