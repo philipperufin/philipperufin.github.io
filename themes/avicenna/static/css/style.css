@@ -292,3 +292,9 @@ h2 code {
     font-size: small;
     margin-top: 0.5%;
 }
+
+.blog-content {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
