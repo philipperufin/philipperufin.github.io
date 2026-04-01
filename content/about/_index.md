@@ -22,9 +22,9 @@ socials:
     linkedin: 'philipperufin/'
 
 interests:
-    - Land System Science
+    - Land Systems
     - Earth Observation
-    - Machine Learning
+    - Machine Learning / Deep Learning
     - Geospatial Data Science
     - Open Science
 
