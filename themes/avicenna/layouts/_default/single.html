@@ -3,7 +3,7 @@
 {{ partial "blog/blog_navbar.html" (dict "1" "about" "2" "blog")}}
 
 {{ partial "blog/blog_post_header.html" . }}
-
-{{ emojify .Content }}
-
+<div class="blog-content">
+    {{ emojify .Content }}
+</div>
 {{ end }}

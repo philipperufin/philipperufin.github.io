@@ -270,18 +270,13 @@ h2 code {
 
 .read_more {
     margin-top: 1%;
+}
+
+.blog-content p {
     text-align: justify;
 }
 
-.content p, article p {
-    text-align: justify;
-}
-
-.blog-post-body p {
-    text-align: justify;
-}
-
-img {
+.blog-content img {
     display: block;
     margin-left: auto;
     margin-right: auto;
