@@ -20,7 +20,7 @@ authors:
 
 date: "2025-02-12"
 
-publication: "PNAS"
+publication: "Proceedings of the National Academy of Sciences"
 
 # You can have multiple links
 # format is, LINK_NAME : LINK_URL

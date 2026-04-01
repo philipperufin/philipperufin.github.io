@@ -8,7 +8,7 @@ full_name: "Philippe Rufin"
 profile_picture: "profile.png"
 cv: "cv.pdf"
 # set to false if you don't want to show your blog
-blog: false
+blog: true
 
 socials:
     #twitter: "philrufin"
