@@ -262,6 +262,16 @@ h2 code {
     padding-right: .5%;
 }
 
+.blog-post-body p {
+    text-align: justify;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .reading_time {
     font-family: 'Inter', sans-serif;
     margin-top: -.5%;
@@ -270,4 +280,5 @@ h2 code {
 
 .read_more {
     margin-top: 1%;
+    text-align: justify;
 }
