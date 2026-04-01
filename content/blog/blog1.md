@@ -19,16 +19,17 @@ Machambas constitute a key source of income and food to most smallholders in thi
 
 November is the very end of the dry season, a time when soils are extremely dry due to low rainfall over several months. In this period, smallholders commonly start to prepare land for the coming growing season. Overall the landscape was characterized by exposed dry soils, and road dust covered huts, cars, animals, and people likewise. Amidst the dry landscape, we saw patches of lush green alongside rivers and lakes.
 
-![Wetlands in drylands as seen by a drone.](/images/blog01/01_wetlands_in_drylands.webp)
+{{< figure src="/images/blog01/01_wetlands_in_drylands.webp" alt="Wetlands in drylands as seen by a drone." caption="Wetlands in drylands as seen by a drone." width="600px" >}}
 
 These “wetlands in drylands” can be used for cultivating crops year-round, including water-intensive fruits and vegetables suitable for commercial activities. These lands were particularly fragmented, which indicates that these moist and fertile areas are shared among many community members.
-![Dry soils with residues from last harvest. Photo: Philippe Rufin](/images/blog01/02_crops_a.webp)
-![Pumpkin plant nearby river. Photo: Patrick Meyfroidt](/images/blog01/02_crops_b.webp)
 
+{{< figure src="/images/blog01/02_crops_a.webp" alt="Dry soils with residues from last harvest." caption="Dry soils with residues from last harvest. Photo: Philippe Rufin" width="600px" >}}
+
+{{< figure src="/images/blog01/02_crops_b.webp" alt="Pumpkin plant nearby river." caption="Pumpkin plant nearby river. Photo: Patrick Meyfroidt" width="600px" >}}
 
 Visiting the foothills of Mount Namuli, Mozambique´s second highest mountain, we observed that machambas covered the steep hill slopes, at elevations of 1,600m and beyond. These machambas are totally inaccessible to machinery or heavy equipment. Farmers climb the slopes to their fields carrying their tools, sometimes several hundred meters above their village.
 
-![Prepared field on the foothills of Mount Namuli. Photo: Philippe Rufin](/images/blog01/03_namuli.webp)
+{{< figure src="/images/blog01/03_namuli.webp" alt="Prepared field on the foothills of Mount Namuli." caption="Prepared field on the foothills of Mount Namuli. Photo: Philippe Rufin" width="600px" >}}
 
 We visited a few sites bordering the Mecubúri Forest, Mozambique´s largest forest reserve. Here, cultivation requires manual clearing of trees and shrubs. Land is managed extensively, and fields are larger compared to the more consolidated regions nearby agglomerations. Farmers make use of fire for clearing land from remnants of vegetation and distribute seeds on the cleared areas. While remnants of the last harvest were still visible, we did not find signs of land preparation such as tillage. 
 
