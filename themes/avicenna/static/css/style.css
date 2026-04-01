@@ -274,27 +274,20 @@ h2 code {
 
 .blog-content p {
     text-align: justify;
-}
-
-.blog-content img {
-    display: block;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .blog-content figure {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .blog-content figcaption p {
-    text-align: center;
-    color: #6c757d;
-    font-size: small;
+    text-align: center !important;
+    color: #6c757d !important;
+    font-size: small !important;
     margin-top: 0.5%;
-}
-
-.blog-content {
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
 }
