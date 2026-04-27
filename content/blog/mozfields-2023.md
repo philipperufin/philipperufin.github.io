@@ -3,7 +3,7 @@ title: "Mapping 17 million fields in Mozambique"
 
 date: "2026-04-23"
 
-tags: ["remote sensing", "deep learning", "smallholder agriculture", "mozambique", "deforestation", "earth observation", "food security", "sub-saharan africa"]
+tags: ["deep learning", "smallholder agriculture", "earth observation", "sub-saharan africa", "mozambique"]
 
 links:
   doi: "https://doi.org/10.1088/1748-9326/ae5cb4"
@@ -44,7 +44,7 @@ The data have - as is always the case - important limitations that users should 
 | **Individual field geometries** | ~17 million field polygons (restricted; available for academic research on request) | [zenodo.19481409](https://doi.org/10.5281/zenodo.19481409) |
 | **Fine-tuned model weights** | Mozambique-specific model weights | [zenodo.17531366](https://doi.org/10.5281/zenodo.17531366) |
 | **Pre-trained model weights** | Pre-trained model weights (France + India training) | [zenodo.7315089](https://doi.org/10.5281/zenodo.7315089) |
-| **Pseudo-label generation code** | Code for producing training pseudo-labels | [github: pseudofields](https://github.com/philipperufin/pseudofields/) |
+| **Pseudo-label generation code** | Code for producing training pseudo-labels | [github: pseudofields](https://github.com/philipperufin/pseudo-fields/) |
 | **DECODE framework** | Model training, inference, and watershed segmentation | [github: decode](https://github.com/waldnerf/decode/) |
 | **Inference & post-processing code** | Supplementary code for national-scale inference | [github: smallholder-fields](https://github.com/philipperufin/smallholder-fields/) |
 | **Supplementary materials** | Methods appendix, additional figures and tables | [10.1088/1748-9326/ae5cb4/data1](https://doi.org/10.1088/1748-9326/ae5cb4/data1) |
