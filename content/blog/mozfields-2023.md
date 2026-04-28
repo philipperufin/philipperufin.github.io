@@ -27,7 +27,7 @@ For this paper we built the first wall-to-wall field delineation dataset for Moz
 
 **Larger fields, more deforestation.** Linking field size to forest cover change (2010–2020) indicates a pattern where areas with larger mean field sizes lost more forest. Regions with mean field size above 2.5 ha lost around 21% of their 2010 tree cover on average, versus 14% where fields are mostly under 0.5 ha. This challenges the narrative that smallholder agriculture is responsible for most agricultural deforestation in Africa — and medium-scale or large farms seem to matter more than previously thought.
 
-{{< figure src="/images/mozfields-2023/animated.gif" alt="Satellite image with field boundaries detected with deep learning fading in." caption="Field boundaries in Mozambique on SPOT6/7 data." width="400px" >}}
+{{< figure src="/images/mozfields-2023/animated.gif" alt="Satellite image with field boundaries detected with deep learning fading in." caption="Field boundaries in Mozambique on SPOT6/7 data." width="600px" >}}
 
 The data have - as is always the case - important limitations that users should be aware of. The cropland class accuracy is moderate (user's and producer's accuracy both around 67-68%), which mostly reflects the challenge of distinguishing active fields from short-term fallows. Tree crops and agroforestry are excluded from the field definition, which is a gap given their presence in Mozambique. Most importantly, our  analysis depends on commercial satellite imagery that is not publicly available — something we flag as a broader problem for sustainability research in data-scarce regions. Interested users can access the data for further down-stream analyses or for comparisons against other products. 
 
