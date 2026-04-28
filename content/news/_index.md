@@ -11,6 +11,10 @@ default_news_icon: "file-text"
 num_news: 10
 
 news_items:
+- text: "Paper on [national scale field delineation in smallholder landscapes](https://doi.org/10.1088/1748-9326/ae5cb4) out in ERL."
+  extra_text: ""
+  date: 2025-06-23
+  icon: "file-text"
 - text: "Co-Coordinator [GLP Working Group on Remote Sensing for Land System Science](https://www.glp.earth/working-groups-0)"
   extra_text: ""
   date: 2026-03-31
@@ -38,10 +42,6 @@ news_items:
 - text: "Pre-print: [Is field size an indicator of farm size in smallholder-dominated croplands?](https://doi.org/10.31220/agriRxiv.2025.00365)?"
   extra_text: ""
   date: 2025-09-25
-  icon: "file-text"
-- text: "Pre-print on [national scale field delineation in smallholder landscapes](https://arxiv.org/abs/2507.10499) out on arXiv."
-  extra_text: ""
-  date: 2025-07-14
   icon: "file-text"
 - text: "ESA Living Planet Symposium 2025 featured [EOAgriTwin](https://www.eoagritwin.eu/), [SEN4MOZ](https://eolab.geographie.hu-berlin.de/research_projects/sen4moz/), & [Field delineation](https://lps25.esa.int/programme/programme-session/?id=E875B12D-BF45-4F89-9DED-EA77AC576E97&presentationId=A2FE7BEE-F3FE-4FC7-B6BA-9AEE88B7BDDB) work"
   extra_text: ""
