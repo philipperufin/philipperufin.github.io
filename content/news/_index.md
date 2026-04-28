@@ -13,7 +13,7 @@ num_news: 10
 news_items:
 - text: "Paper on [national scale field delineation in smallholder landscapes](https://doi.org/10.1088/1748-9326/ae5cb4) out in ERL."
   extra_text: ""
-  date: 2025-06-23
+  date: 2026-04-23
   icon: "file-text"
 - text: "Co-Coordinator [GLP Working Group on Remote Sensing for Land System Science](https://www.glp.earth/working-groups-0)"
   extra_text: ""
