@@ -22,6 +22,7 @@ links:
     data: https://doi.org/10.5281/zenodo.19481408
     model: https://doi.org/10.5281/zenodo.17531365
     code: https://github.com/philipperufin/smallholder-fields/
+    blog: https://philipperufin.github.io/blog/mozfields-2023/
 
 ---
 
