@@ -37,17 +37,13 @@ The data have - as is always the case - important limitations that users should 
 
 | Resource | Description | Link |
 |---|---|---|
-| **MozFields 2023 dataset** | Cropland fraction and field size estimates at 0.05° resolution | [zenodo.18938383](https://doi.org/10.5281/zenodo.18938383) |
-| **Individual field geometries** | ~17 million field polygons (restricted; available for academic research on request) | [zenodo.19481409](https://doi.org/10.5281/zenodo.19481409) |
-| **Fine-tuned model weights** | Mozambique-specific model weights | [zenodo.17531366](https://doi.org/10.5281/zenodo.17531366) |
-| **Pre-trained model weights** | Pre-trained model weights (France + India training) | [zenodo.7315089](https://doi.org/10.5281/zenodo.7315089) |
-| **Pseudo-label generation code** | Code for producing training pseudo-labels | [github: pseudofields](https://github.com/philipperufin/pseudo-fields/) |
-| **DECODE framework** | Model training, inference, and watershed segmentation | [github: decode](https://github.com/waldnerf/decode/) |
-| **Inference & post-processing code** | Supplementary code for national-scale inference | [github: smallholder-fields](https://github.com/philipperufin/smallholder-fields/) |
-| **Supplementary materials** | Methods appendix, additional figures and tables | [10.1088/1748-9326/ae5cb4/data1](https://doi.org/10.1088/1748-9326/ae5cb4/data1) |
+| **MozFields 2023 dataset** | Cropland fraction and field size estimates at 0.05° resolution | [zenodo](https://doi.org/10.5281/zenodo.18938383) |
+| **MozFields 2023 field geometries** | ~17 million field polygons (restricted; available for academic research on request) | [zenodo](https://doi.org/10.5281/zenodo.19481409) |
+| **Fine-tuned model weights** | Mozambique-specific model weights | [zenodo](https://doi.org/10.5281/zenodo.17531366) |
+| **Pre-trained model weights** | Pre-trained model weights (France + India training) | [zenodo](https://doi.org/10.5281/zenodo.7315089) |
+| **Pseudo-label generation code** | Code for producing training pseudo-labels | [github](https://github.com/philipperufin/pseudo-fields/) |
+| **DECODE framework** | Model training, inference, and watershed segmentation | [github](https://github.com/waldnerf/decode/) |
+| **Inference & post-processing code** | Supplementary code for national-scale inference | [github](https://github.com/philipperufin/smallholder-fields/) |
+| **Supplementary materials** | Methods appendix, additional figures and tables | [pdf](https://doi.org/10.1088/1748-9326/ae5cb4/data1) |
 
 ---
-
-## Citation
-
-> Rufin, P., Hammer, P.L., Thomas, L.-F., Lisboa, S.N., Ribeiro, N., Sitoe, A., Hostert, P. & Meyfroidt, P. (2026). National-scale field delineation in Mozambique refines our understanding of cropland distribution, field size, and deforestation actors. *Environmental Research Letters*, 21, 084009. https://doi.org/10.1088/1748-9326/ae5cb4
