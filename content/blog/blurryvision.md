@@ -102,7 +102,7 @@ Overall, mean canopy height is consistently overestimated, whereas STM & AEF beh
 The spatial variance (expressed as standard deviation in canopy height) is consistently underestimated across all sets of input features. Here, STM appears slightly closer to the 0 line, indicating that variance is picked up more consistently.
 But the question remains if the higher variance in STM predictions is actual (true) variance or simply noise resembling true variance?
 
-{{< figure src="/images/blurryvision/variance.png" alt="Density curves of difference in canopy height metrics (mean, standard deviation) between reference CHM and predictions across window sizes of 5, 10, and 25. Colors indicate input datasets used for predictions (STM, AEF, TESSERA)." width="600px" >}}
+{{< figure src="/images/blurryvision/results_variance.png" alt="Density curves of difference in canopy height metrics (mean, standard deviation) between reference CHM and predictions across window sizes of 5, 10, and 25. Colors indicate input datasets used for predictions (STM, AEF, TESSERA)." width="600px" >}}
 
 ## RQ3 - Performance ~ Variance
 
@@ -112,7 +112,7 @@ To isolate the effect of artificial "blurriness" in high-variance settings, we r
 
 Median trend lines for RMSE error metric indicate that this pattern is indeed present, although errors tend to increase across all input features and the differences between features are not very high. Nevertheless, we can show that compared to STM, AEF has lower errors in low-variance settings and higher errors in high-variance settings, partly confirming our initial hypothesis. This pattern holds true across window sizes but tends to average out when window sizes increase beyond 50 pixels. Similarly, it holds across RMSE, MAE, and ME. Nevertheless, we want to stress that the signal remains relatively weak, and differences are likely not statistically significant. 
 
-{{< figure src="/images/blurryvision/results_performance_variance.jpg" alt="Median trends of ME and RMSE per bin of standard deviation in reference canopy height for 5x5, 10x10, and 25x25 pixel windows. Colors indicate different input features used." width="600px" >}}
+{{< figure src="/images/blurryvision/results_performance_variance.png" alt="Median trends of ME and RMSE per bin of standard deviation in reference canopy height for 5x5, 10x10, and 25x25 pixel windows. Colors indicate different input features used." width="600px" >}}
 
 # Takeaways
 
