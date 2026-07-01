@@ -272,19 +272,36 @@ h2 code {
     margin-top: 1%;
 }
 
-.blog-content p {
-    text-align: justify;
+.blog-content p,
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content ul,
+.blog-content ol,
+.blog-content figure {
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.blog-content figure {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+.blog-content p {
+    text-align: justify;
 }
 
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content figure {
+    text-align: center;
+}
+
+.blog-content ul,
+.blog-content ol {
+    text-align: left;
+    padding-left: 1.2em;
+}
 .blog-content figcaption p {
     text-align: center !important;
     color: #6c757d !important;

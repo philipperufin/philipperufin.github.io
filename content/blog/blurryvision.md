@@ -21,7 +21,7 @@ Alpha Earth Foundations (AEF) are currently one of the most prominent examples o
 
 Context-aware embeddings tend to produce spatially coherent outputs, but we observed that predictions based on AEF tend to smooth high spatial variability in continuous targets compared to hand-crafted features from EO time series that represent exclusively information at the pixel-level. We then wondered if AEF inherently struggles to represent pronounced spatial variability in continuous targets but instead create smoothly appearing surfaces, precisely because of the context-aware learning paradigm. In other words - are we facing blurry vision when using AEF in applications targeting such high-variance contexts?
 
-{{< figure src="/images/blurryvision/blurryglobe.jpg" alt="" width="600px">}}
+{{< figure src="/images/blurryvision/blurryglobe.jpg" alt="" width="200px">}}
 
 To be more precise, this observation was notably present when assessing predictions of fractional woody cover or canopy height in highly heterogeneous Miombo ecosystems, where dense vegetation canopies exist next to more open vegetation forms, but also isolated trees in larger patches of herbaceous vegetation. We observed a smoothness that partly resembled resampling issues, so we started to revisit the methods workflow but the issue persisted.
 
@@ -118,12 +118,20 @@ Median trend lines for RMSE error metric indicate that this pattern is indeed pr
 
 The experiment yielded four takeaways which motivate further research: 
 
-1)	The performance of using GE in default workflows remains sensitive to methodological choices and these vary with input features. While trying to minimize these, the parameter space for adjusting the canopy height estimation workflow is still large with respect to, e.g. model choice, hyperparameters, the sampling scheme for selecting training and test data (purely random vs. stratified, and in the case of stratified sampling also the number and size of bins), and additional application-specific parameters such as the selection of the most appropriate canopy height metrics (i.e., mean vs. median vs. max at the 10m level). 
+## Performance is sensitive to numerous design choices
 
-2)	Isolating and quantifying visual effects and artefacts in GE predictions such as "blur", or "noise" should be addressed more routinely. The problem at hand appears to be complex and distilling a measure of the desired effect (blurriness) is challenging, but further research could aim at testing more diverse measures of spatial autocorrelation, or advanced image processing metrics. 
+The performance of using GE in default workflows remains sensitive to methodological choices and these vary with input features. While trying to minimize these, the parameter space for adjusting the canopy height estimation workflow is still large with respect to, e.g. model choice, hyperparameters, the sampling scheme for selecting training and test data (purely random vs. stratified, and in the case of stratified sampling also the number and size of bins), and additional application-specific parameters such as the selection of the most appropriate canopy height metrics (i.e., mean vs. median vs. max at the 10m level). 
 
-3)	Given the complexity of the AEF architecture, we can merely assume the reason for the effect of blurriness. First, smooth continuous training targets and regional bias as mentioned above may not lead to strong activation of the Precision block in comparison to the Space and Time blocks. Second, the AEF architecture features an initial spatial downsampling step decreasing the spatial resolution of the inputs by half before passing the inputs to the Space Time Precision encoder for learning which enhances computational efficiency but may contribute to the observed blurriness. Third, STP encoder blends CNN (Precision) and attention blocks (Space, Time), the latter of which is running with coarser patch dimensions compared to the CNN (Precision) block.
+## Spatial consistency and texture of GE can matter
 
-4)	Contrary to our expectations motivated by the literature, we were surprised that pixel-level GE such as TESSERA did not yield similar or higher performance compared to AEF and STM. This also involves the question of dimensionality, as TESSERA has a more nuanced representation with 128 dimensions as compared to the 64 dimensions of AEF. However, the spatial patterns in the TESSERA predictions indicate that there may be issues related to the pixel-level GE in our study region, which needs further investigation. 
+Isolating and quantifying visual effects and artefacts in GE predictions such as "blur", or "noise" should be addressed more routinely. The problem at hand appears to be complex and distilling a measure of the desired effect (blurriness) is challenging, but further research could aim at testing more diverse measures of spatial autocorrelation, or advanced image processing metrics. 
+
+## "Blurriness" is potentially embedded in learning paradigms
+
+Given the complexity of the AEF architecture, we can merely assume the reason for the effect of blurriness. First, smooth continuous training targets and regional bias as mentioned above may not lead to strong activation of the Precision block in comparison to the Space and Time blocks. Second, the AEF architecture features an initial spatial downsampling step decreasing the spatial resolution of the inputs by half before passing the inputs to the Space Time Precision encoder for learning which enhances computational efficiency but may contribute to the observed blurriness. Third, STP encoder blends CNN (Precision) and attention blocks (Space, Time), the latter of which is running with coarser patch dimensions compared to the CNN (Precision) block.
+
+## Pixel-level GE face different challenges
+
+Contrary to our expectations motivated by the literature, we were surprised that pixel-level GE such as TESSERA did not yield similar or higher performance compared to AEF and STM. This also involves the question of dimensionality, as TESSERA has a more nuanced representation with 128 dimensions as compared to the 64 dimensions of AEF. However, the spatial patterns in the TESSERA predictions indicate that there may be issues related to the pixel-level GE in our study region, which needs further investigation. 
 
 We would be interested in learning about your thoughts on this topic, so feel free to reach out!
