@@ -3,7 +3,7 @@ title: "Blurry Vision - Do learning paradigms in context-aware Earth embeddings 
 
 tags: [ "deep_learning", "embeddings", "ai"]
 
-date: 2026-07-01T20:38:29-07:00
+date: 2026-07-01T00:00:00-00:00
 draft: false
 ---
 
@@ -21,7 +21,7 @@ Alpha Earth Foundations (AEF) are currently one of the most prominent examples o
 
 Context-aware embeddings tend to produce spatially coherent outputs, but we observed that predictions based on AEF tend to smooth high spatial variability in continuous targets compared to hand-crafted features from EO time series that represent exclusively information at the pixel-level. We then wondered if AEF inherently struggles to represent pronounced spatial variability in continuous targets but instead create smoothly appearing surfaces, precisely because of the context-aware learning paradigm. In other words - are we facing blurry vision when using AEF in applications targeting such high-variance contexts?
 
-{{< figure src="/images/blurryvision/blurryglobe.jpg" alt="" width="600px" >}}
+{{< figure src="/images/blurryvision/blurryglobe.jpg" alt="" width="600px">}}
 
 To be more precise, this observation was notably present when assessing predictions of fractional woody cover or canopy height in highly heterogeneous Miombo ecosystems, where dense vegetation canopies exist next to more open vegetation forms, but also isolated trees in larger patches of herbaceous vegetation. We observed a smoothness that partly resembled resampling issues, so we started to revisit the methods workflow but the issue persisted.
 
@@ -35,9 +35,9 @@ Current learning paradigms in spatially context-aware embeddings, such as AlphaE
 
 # Research Questions
 
-RQ1) Which shallow ML model setup performs best for canopy height (CH) estimation?
-RQ2) How does CH estimation performance differ between hand-crafted features (optical + radar STM), pixel-level (TESSERA) and context-aware (AEF) geospatial embeddings?
-RQ3) How accurately is actual spatial variability in canopy height represented in predictions based on pixel-level vs. context-aware features?
+RQ 1: Which shallow ML model setup performs best for canopy height (CH) estimation?
+RQ 2: How does CH estimation performance differ between hand-crafted features (optical + radar STM), pixel-level (TESSERA) and context-aware (AEF) geospatial embeddings?
+RQ 3: How accurately is actual spatial variability in canopy height represented in predictions based on pixel-level vs. context-aware features?
 
 
 # Experiment
@@ -72,7 +72,7 @@ Local spatial variance metrics were quantified by calculating mean, median, rang
 
 # Results
 
-## RQ1 – Model selection
+## RQ1 - Model selection
 
 We observe that AEF performs best throughout most of the experiments, with low error metrics and high R², followed by hand-crafted STM. TESSERA performed worst in our canopy height estimation setting. 
 
@@ -86,11 +86,11 @@ Global performance in the XGBoost setting indicates differences in performance b
 
 {{< figure src="/images/blurryvision/results_global.png" alt="Scatterplots of observed vs. predicted (XGBoost) canopy height across input features." width="600px" >}}
 
-## RQ3 – Spatial Patterns
+## RQ3 - Spatial Patterns
 
 The spatial appearance of the canopy height predictions is quite distinct across the input features. As observed previously, AEF appears to have more smooth, continuous surfaces, with underestimation particularly in herbaceous wetland pockets that feature few large trees. Comparably, STM has visually higher pixel-level variability but also tendencies to overestimate canopy height in low woody cover regimes. TESSERA spatial patterns appear to be noisy with block-like artifacts.
 
-{{< figure src="/images/blurryvision/results_patterns.png" alt="SPOT 6/7 1.5 m resolution imagery (first row), observed canopy height (second row) and predicted canopy height (third to last row) using XGBoost and STM, AEF, and TESSERA as input features." width="600px" >}}
+{{< figure src="/images/blurryvision/results_patterns.png" alt="SPOT 6/7 1.5 m resolution imagery (first row), observed canopy height (second row) and predicted canopy height (third to last row) using XGBoost and STM, AEF, and TESSERA as input features." width="600px">}}
 
 ## RQ3 - Spatial Variance
 
