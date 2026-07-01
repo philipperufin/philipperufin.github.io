@@ -81,19 +81,19 @@ While algorithm selection is not as straightforward and different algorithms sho
 
 {{< figure src="/images/blurryvision/results_models.png" alt="Canopy height estimation performance with different input features across model types and performance metrics. 20-fold permutations using different training / validation splits" width="600px" >}}
 
-## RQ2 - Global Performance
+## RQ2 - Global performance
 
 Global performance in the XGBoost setting indicates differences in performance between AEF & STM, whereas AEF consistently yields higher R² and lower RMSE and MAE compared to STM. The differences are partly marginal, while TESSERA had higher spread & stronger tendency for overestimation as observed in the scatterplots.
 
 {{< figure src="/images/blurryvision/results_global.png" alt="Scatterplots of observed vs. predicted (XGBoost) canopy height across input features." width="600px" >}}
 
-## RQ3 - Spatial Patterns
+## RQ3 - Spatial variance
 
 The spatial appearance of the canopy height predictions is quite distinct across the input features. As observed previously, AEF appears to have more smooth, continuous surfaces, with underestimation particularly in herbaceous wetland pockets that feature few large trees. Comparably, STM has visually higher pixel-level variability but also tendencies to overestimate canopy height in low woody cover regimes. TESSERA spatial patterns appear to be noisy with block-like artifacts.
 
 {{< figure src="/images/blurryvision/results_patterns.png" alt="SPOT 6/7 1.5 m resolution imagery (first row), observed canopy height (second row) and predicted canopy height (third to last row) using XGBoost and STM, AEF, and TESSERA as input features." width="600px">}}
 
-## RQ3 - Spatial Variance
+###  Quantifying spatial variance
 
 When quantifying the differences between reference and predicted canopy height mean or standard deviation in non-overlapping NxN pixel windows, more clear patterns emerge.
 
@@ -104,11 +104,11 @@ But the question remains if the higher variance in STM predictions is actual (tr
 
 {{< figure src="/images/blurryvision/results_variance.png" alt="Density curves of difference in canopy height metrics (mean, standard deviation) between reference CHM and predictions across window sizes of 5, 10, and 25. Colors indicate input datasets used for predictions (STM, AEF, TESSERA)." width="600px" >}}
 
-## RQ3 - Performance ~ Variance
+### Performance ~ Variance
 
 To isolate the effect of artificial "blurriness" in high-variance settings, we related the observed variance (SD of canopy height representing spatial variability) to error metrics across the different N x N pixel windows. Following our hypothesis and empirical insights until this point we would expect that for AEF, errors increase with increasing spatial variance, while for TESSERA and STM this relationship should be less strong. 
 
-{{< figure src="/images/blurryvision/performance_variance_scheme.jpg" alt="Schematic graph of hypothesis indicating decreasing performance with increasing spatial variance for AEF while STM and TESSERA remain constant performance." width="600px" >}}
+{{< figure src="/images/blurryvision/performance_variance_scheme.jpg" alt="Schematic graph of hypothesis indicating decreasing performance with increasing spatial variance for AEF while STM and TESSERA remain constant performance." width="400px" >}}
 
 Median trend lines for RMSE error metric indicate that this pattern is indeed present, although errors tend to increase across all input features and the differences between features are not very high. Nevertheless, we can show that compared to STM, AEF has lower errors in low-variance settings and higher errors in high-variance settings, partly confirming our initial hypothesis. This pattern holds true across window sizes but tends to average out when window sizes increase beyond 50 pixels. Similarly, it holds across RMSE, MAE, and ME. Nevertheless, we want to stress that the signal remains relatively weak, and differences are likely not statistically significant. 
 
@@ -118,19 +118,19 @@ Median trend lines for RMSE error metric indicate that this pattern is indeed pr
 
 The experiment yielded four takeaways which motivate further research: 
 
-## Performance is sensitive to numerous design choices
+**Performance is sensitive to numerous design choices**
 
 The performance of using GE in default workflows remains sensitive to methodological choices and these vary with input features. While trying to minimize these, the parameter space for adjusting the canopy height estimation workflow is still large with respect to, e.g. model choice, hyperparameters, the sampling scheme for selecting training and test data (purely random vs. stratified, and in the case of stratified sampling also the number and size of bins), and additional application-specific parameters such as the selection of the most appropriate canopy height metrics (i.e., mean vs. median vs. max at the 10m level). 
 
-## Spatial consistency and texture of GE can matter
+**Spatial consistency and texture of GE can matter**
 
 Isolating and quantifying visual effects and artefacts in GE predictions such as "blur", or "noise" should be addressed more routinely. The problem at hand appears to be complex and distilling a measure of the desired effect (blurriness) is challenging, but further research could aim at testing more diverse measures of spatial autocorrelation, or advanced image processing metrics. 
 
-## "Blurriness" is potentially embedded in learning paradigms
+**"Blurriness" is potentially embedded in learning paradigms**
 
 Given the complexity of the AEF architecture, we can merely assume the reason for the effect of blurriness. First, smooth continuous training targets and regional bias as mentioned above may not lead to strong activation of the Precision block in comparison to the Space and Time blocks. Second, the AEF architecture features an initial spatial downsampling step decreasing the spatial resolution of the inputs by half before passing the inputs to the Space Time Precision encoder for learning which enhances computational efficiency but may contribute to the observed blurriness. Third, STP encoder blends CNN (Precision) and attention blocks (Space, Time), the latter of which is running with coarser patch dimensions compared to the CNN (Precision) block.
 
-## Pixel-level GE face different challenges
+**Pixel-level GE face different challenges**
 
 Contrary to our expectations motivated by the literature, we were surprised that pixel-level GE such as TESSERA did not yield similar or higher performance compared to AEF and STM. This also involves the question of dimensionality, as TESSERA has a more nuanced representation with 128 dimensions as compared to the 64 dimensions of AEF. However, the spatial patterns in the TESSERA predictions indicate that there may be issues related to the pixel-level GE in our study region, which needs further investigation. 
 
