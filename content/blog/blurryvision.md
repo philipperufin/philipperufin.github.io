@@ -3,174 +3,127 @@ title: "Blurry Vision - Do learning paradigms in context-aware Earth embeddings 
 
 tags: [ "deep_learning", "embeddings", "ai"]
 
-date: 2026-05-27T16:12:29-07:00
-draft: true
+date: 2026-07-01T20:38:29-07:00
+draft: falase
 ---
 
-# Background
+# Geospatial Embeddings
 
-Numerous geospatial embeddings offer competitive performance across downstream applications.
-Architecture designs differ fundamentally: 
-Pixel-level embeddings (1D CNN, Transformers) exploit spectral/temporal/spectral-temporal information at the pixel-level
-Context-aware embeddings (e.g. 2D/3D CNNs, ViT) incorporate spatial context (e.g. textures, shapes) from neighboring pixels. 
-Context-aware embeddings tend to produce spatially coherent outputs, but… 
-…we observed that compared to pixel-level STM, predictions based on AEF fail to reconstruct high spatial variability in continuous targets.
+Geospatial embeddings (GE) offer user-friendly representations of large EO image archives with competitive performance across numerous predictive mapping applications. A wealth of GE are available, including Alpha Earth Foundations, TESSERA, or Major TOM. 
+
+Importantly, architectures behind GE differ fundamentally - we can discriminate pixel-level against context-aware architectures: embeddings based on one-dimensional architectures such as 1D CNNs or Transformers exploit the spectral, temporal, or spectral-temporal information contained in imagery archives at the pixel-level. Alternatively, context-aware embeddings based on CNNs, or Vision Transformers additionally learn not only the spectral and/or temporal signal contained in EO data but also the spatial context from neighboring pixels. 
+
+Context-awareness enables models to learn local spatial patterns such as texture, shape, or object extent, or in some cases even landscape-level patterns and structure that are characteristic of common targets in EO applications (e.g. land cover). The outputs of context-aware models tend to be more spatially coherent and robust to noise and local variability, improving thematic consistency at the patch or object scale.
+
+# Blurry Vision?
+
+Alpha Earth Foundations (AEF) are currently one of the most prominent examples of context-aware embeddings and increasingly popular due to global and multi-year availability. AEF have been suggested to offer competitive performance for real-world downstream applications, including applications in agriculture, ecology, or land change science.
+
+Context-aware embeddings tend to produce spatially coherent outputs, but we observed that predictions based on AEF tend to smooth high spatial variability in continuous targets compared to hand-crafted features from EO time series that represent exclusively information at the pixel-level. We then wondered if AEF inherently struggles to represent pronounced spatial variability in continuous targets but instead create smoothly appearing surfaces, precisely because of the context-aware learning paradigm. In other words - are we facing blurry vision when using AEF in applications targeting such high-variance contexts?
 
 {{< figure src="/images/blurryvision/blurryglobe.jpg" alt="" width="600px" >}}
 
--	Wealth of emerging global initiatives on geospatial embeddings [1], [2], [3]
--	Architecture designs differ fundamentally (pixel-level vs. context-aware). 
--	Context-aware training (e.g. CNNs / vision transformers (ViT)) explicitly incorporate spatial context, aggregating information from neighboring pixels. 
--	This potentially enables learning spatial patterns such as texture, shape, and object extent that are characteristic of targets in EO applications, e.g. land cover. 
--	Outputs of context-aware models tend to be more spatially coherent and robust to noise and local variability, improving thematic consistency at the object scale. 
--	Alpha Earth Foundations (AEF) are currently a prominent example of context-aware embeddings available globally and across multiple years. 
--	AEF offer competitive performance for real-world downstream applications [2].
--	Some drawbacks have been identified compared in agricultural applications when compared to handcrafted EO features, including reduced spatial transferability, lacking interpretation, and limited time sensitivity [4].
+To be more precise, this observation was notably present when assessing predictions of fractional woody cover or canopy height in highly heterogeneous Miombo ecosystems, where dense vegetation canopies exist next to more open vegetation forms, but also isolated trees in larger patches of herbaceous vegetation. We observed a smoothness that partly resembled resampling issues, so we started to revisit the methods workflow but the issue persisted.
 
--	We qualitatively observed that predictions based on AEF fail to capture continuous targets with pronounced spatial variability but instead create overly smooth surfaces.
+One potential reason behind this effect may be that AEF optimizes the reconstruction of spatially coherent or smooth targets such as climate, elevation, or land cover. Additionally, these tasks are being conducted in regions with rather homogeneous landscapes (i.e. low pixel-to-pixel variance) such as the US. Thus, during learning, the current AEF learning paradigm may favor consistent patches or smooth gradients, while the model is not rewarded to learn small-scale spatial semantics. Because of the target selection, the model succeeds at its objective without capturing fine spatial details contained in other contexts. This may systematically interfere with the learning of spatially variant and heterogeneous landscape contexts. 
 
+We want to explore this issue as a potential limitation of AEF in specific downstream applications where spatial variability is highly relevant, such as canopy height or biomass estimation.
 
-{{< figure src="/images/blurryvision/figure.jpg" alt="caption" width="600px" >}}
-
-# Reasoning
-
-AEF targets reconstruction of land cover, climate, or DEMs, favoring consistent patches or smooth gradients.
-Learning paradigm may not reward the model to learn small-scale spatial semantics, i.e., the model succeeds at its objective without capturing fine spatial details.
-This may systematically interfere with the learning of spatially variant and heterogeneous landscape contexts. 
-
-
--	Training Earth embedding models with generic reconstruction tasks such as land cover or DEMs aim at generating a broad understanding of surface properties which favours consistent patches of smooth gradients.
--	Potentially, the learning paradigm of AEF does thus not reward the model to learn small-scale spatial semantics, i.e., the training setup might be such that the model can succeed at its objective without needing to capture fine spatial details.
--	This may, however, systematically interfere with the learning of spatially variant and heterogeneous landscape contexts. 
-
--	We want to explore this as a key limitation of AEF in specific downstream applications where spatial variability is highly relevant, such as canopy height or biomass estimation.
-
-# Hypothesis & RQs
+# Hypothesis 
 
 Current learning paradigms in spatially context-aware embeddings, such as AlphaEarth v1, dampen spatial variability in high-variance contexts, e.g. canopy height estimation. 
 
--	Spatial context is overemphasized and context-aware (i.e. 2D) embeddings, such as AlphaEarth v1 lead to spatially highly consistent predictions. However, these cannot necessarily accurately reflect true spatial variability in heterogeneous environments or in cases where targets can be expected to have high spatial variability, including canopy height or biomass estimation. 
+# Research Questions
 
-1) Which shallow ML model setup performs best for canopy height (CH) estimation?
-
-2) How does CH estimation performance differ between hand-crafted features (optical + radar STM), pixel-level (TESSERA) and context-aware (AEF) geospatial embeddings?
-
-3) How accurately is true spatial variability in canopy height represented in predictions based on pixel-level vs. context-aware features?
+RQ1) Which shallow ML model setup performs best for canopy height (CH) estimation?
+RQ2) How does CH estimation performance differ between hand-crafted features (optical + radar STM), pixel-level (TESSERA) and context-aware (AEF) geospatial embeddings?
+RQ3) How accurately is actual spatial variability in canopy height represented in predictions based on pixel-level vs. context-aware features?
 
 
 # Experiment
 
-## Data
+## Study region
+We explore canopy height estimation in Miombo woodlands in and around Gilé National Park, Mozambique. This is a heterogeneous, often open woody landscape with smallholder farmers relying on shifting cultivation, and regular fire occurrence.
 
-Study region
--	Miombo woodlands in and around Gilé National Park, Mozambique
--	Heterogeneous open woody landscape with smallholder farmers relying on shifting cultivation, fast regrowth dynamics, regular fire occurrence
-
-Reference
-Aerial LiDAR Canopy Height Model @ 1m resolution (2022, source: https://doi.org/10.1038/s43247-024-01448-x)
-Aggregated to 10m using mean resampling
-
-Input features
-Bi-seasonal S1 / S2 STMs (n=264)
-Alpha Earth Foundations (AEF) (n=64)
-TESSERA embeddings (n=128)
+## Reference data
+We use an aerial LiDAR Canopy Height Model at 1m resolution for the year 2022 (source: https://doi.org/10.1038/s43247-024-01448-x), aggregated to 10m using mean resampling.
 
 {{< figure src="/images/blurryvision/aoi.jpg" alt="Study area and 1 m canopy height model used here. For reference, aggregation windows of 5, 10, 25, and 50 Sentinel-2 pixels are visualized" width="600px" >}}
+
+## Input features
+
+As hand-crafted input features, we use bi-seasonal spectral-temporal metrics (STM) from Sentinel-1 and Sentinel-2 time series, comprising a total of 264 features per pixel.
+
+Regarding context-aware GE we consider Alpha Earth Foundations (AEF) v1, which condense Sentinel-1, Sentinel-2 and Landsat time series into a 64-dimensional vector. 
+
+TESSERA v1.1 embeddings were selected as pixel-level GE, based on Sentinel-2 and Sentinel-1 time series which are represented as a 128-dimensional vector.
+
 
 ## Workflow
 
 {{< figure src="/images/blurryvision/experiment.jpg" alt="Experimental setup" width="600px" >}}
 
-Predictions
--	We sampled random points from 10m aggregated canopy height model (mean, median, min, max). 
--	Stratified random sampling with bins of 5m (0-5 m, 5-10 m, …, 25-30 m, >30 m) with 1,000 samples per category. The population was split into training (70%) and testing (30%). 
--	We trained regression models on median, mean, and max canopy height @ 10m based on the training split. Inputs were STMs (264 bands), TESSERA (128 bands), AEF (64 bands). 
--	Model evaluation was based on predictions of the test split using RMSE, MAE, ME, as well as R², intercept and slope of linear model between observed~predicted canopy height. Permutations (n = 20) were used to capture variance in performance due to random train/test split.
--	Spatial predictions were created to compare spatial patterns and variance between predictions. 
+We produced a stratified random sample (bins of 5m canopy height intervals with 1,000 samples in each bin) on the 10m aggregated mean canopy height layer and extracted the different input features for each sample. To evaluate the suitability of shallow ML models, we trained Random Forest Regressions, Support Vector Regressions, and XGBoost models with a 20-fold permutation varying the train / test split (70%/30%), predicted canopy height for the test samples, and evaluated the distribution of performance scores. Model evaluation was based on RMSE, MAE, ME, as well as R², intercept and slope of linear model between observed and predicted canopy height. 
 
-Analyses
--	Comparison of global performance metrics (RMSE, MAE, R², etc.) across input features and models (XGBoost (XGB), Support Vector Regression (SVR), Random Forest Regression (RFR))
--	Locally, spatial variance metrics are quantified by calculating mean, median, range, and standard deviation of canopy height between STM, AEF, TESSERA and reference (CHM) across non-overlapping windows of varying sizes (5x5, 10x10, 20x20, 50x50, 100x100 pixels) and comparing their statistical distributions. 
--	Residual analysis: with increasing spatial variance, AEF residuals should increase, while STMs remain constant? Scatterplots x axis SD in 5x5 pixel windows, y axis mean error = mean(obs-pred).
+We then produced spatial predictions to compare spatial patterns and variance between predictions. Comparison of global performance metrics (RMSE, MAE, R², etc.) across input features and models (XGBoost (XGB), Support Vector Regression (SVR), Random Forest Regression (RFR)). We deliberately chose to rely on shallow pixel-based ML algorithms for the canopy height predictions and did not test spatially aware CNNs to not conflate the spatial detail in the high-variance setting. This is potentially a self-imposed restriction on maximum attainable performance in this case but many users of GE oftentimes will rely on such shallow ML models. 
 
--	Comparison of input features and models (XGB, SVR, RFR)
--	Permutation (N=20) to obtain variability of performance across varying train/test splits
--	Selection of best model depending on metric, we here choose XGB due to closest linear fits between observed and predicted across inputs.
+Local spatial variance metrics were quantified by calculating mean, median, range, and standard deviation of canopy height between STM, AEF, TESSERA and reference (CHM) across non-overlapping windows of varying sizes (5x5, 10x10, 25x25 pixels) and comparing their statistical distributions. This was done to assess whether STMs, AEF, and TESSERA have varying distributions in terms of local spatial variance and to what extent it differs from the observed spatial variance. We then conclude the experiment by relating the observed performance to bins of spatial variance, investigating the question whether performance differences across the different input features are related to spatial variance.
 
 
 # Results
 
-## Models
-AEF performs best, followed by STM 
-TESSERA does not yield good results in CH estimation
-XGBoost yields stable behaviour and fits close to 1:1 line
-Overall performance depends on sampling scheme, but patterns remain.
+## RQ1 – Model selection
+
+We observe that AEF performs best throughout most of the experiments, with low error metrics and high R², followed by hand-crafted STM. TESSERA performed worst in our canopy height estimation setting. 
+
+While algorithm selection is not as straightforward and different algorithms show varying strengths depending on metrics and input features, we observed that XGBoost yielded a comparatively stable behaviour with high performance throughout and fits between observed and predicted that were close to the 1:1 line (i.e., intercepts close to 0, slopes close to 1). We thus continue the experiment using XGBoost. Overall, we want to note that the performance also depended on the sampling scheme chosen, but the overall patterns remained constant when altering between stratified vs. random sampling. 
 
 {{< figure src="/images/blurryvision/results_models.png" alt="Canopy height estimation performance with different input features across model types and performance metrics. 20-fold permutations using different training / validation splits" width="600px" >}}
 
-… we continue with XGBoost.
+## RQ2 - Global Performance
 
-## Global Performance
-
-Global performance indicates slight differences in performance between AEF & STM
-AEF consistently yields higher R², lower RMSE
-TESSERA has higher spread & stronger tendency for overestimation
+Global performance in the XGBoost setting indicates differences in performance between AEF & STM, whereas AEF consistently yields higher R² and lower RMSE and MAE compared to STM. The differences are partly marginal, while TESSERA had higher spread & stronger tendency for overestimation as observed in the scatterplots.
 
 {{< figure src="/images/blurryvision/results_global.png" alt="Scatterplots of observed vs. predicted (XGBoost) canopy height across input features." width="600px" >}}
 
-## Patterns
+## RQ3 – Spatial Patterns
 
-Spatial appearance of predictions is distinct across input features.
-STM has visually higher pixel-level variability.
+The spatial appearance of the canopy height predictions is quite distinct across the input features. As observed previously, AEF appears to have more smooth, continuous surfaces, with underestimation particularly in herbaceous wetland pockets that feature few large trees. Comparably, STM has visually higher pixel-level variability but also tendencies to overestimate canopy height in low woody cover regimes. TESSERA spatial patterns appear to be noisy with block-like artifacts.
 
-AEF appears smooth, creating underestimation in herbaceous wetland pockets.
+{{< figure src="/images/blurryvision/results_patterns.png" alt="SPOT 6/7 1.5 m resolution imagery (first row), observed canopy height (second row) and predicted canopy height (third to last row) using XGBoost and STM, AEF, and TESSERA as input features." width="600px" >}}
 
-TESSERA spatial patterns appear noisy / blocky, potentially linked to Transformer artefacts?
+## RQ3 - Spatial Variance
 
-{{< figure src="/images/blurryvision/results_patterns.png" alt="Spatial patterns of observed (top row) and predicted canopy height (second to last row) using XGBoost and STM, AEF, and TESSERA as input features." width="600px" >}}
+When quantifying the differences between reference and predicted canopy height mean or standard deviation in non-overlapping NxN pixel windows, more clear patterns emerge.
 
-## Spatial Variance
+Overall, mean canopy height is consistently overestimated, whereas STM & AEF behave relatively similar, but TESSERA has a large spread.
 
-Quantifying differences between reference and predicted mean / SD CH in non-overlapping NxN pixel windows.
-Mean CH consistently overestimated, STM & AEF similar, TESSERA large spread
-
-SD CH consistently under-estimated, and STM appears slightly closer to 0 line.
-
-Is the higher variance in STM predictions true or simply noise resembling true variance ?
+The spatial variance (expressed as standard deviation in canopy height) is consistently underestimated across all sets of input features. Here, STM appears slightly closer to the 0 line, indicating that variance is picked up more consistently.
+But the question remains if the higher variance in STM predictions is actual (true) variance or simply noise resembling true variance?
 
 {{< figure src="/images/blurryvision/variance.png" alt="Density curves of difference in canopy height metrics (mean, standard deviation) between reference CHM and predictions across window sizes of 5, 10, and 25. Colors indicate input datasets used for predictions (STM, AEF, TESSERA)." width="600px" >}}
 
-## Performance ~ Variance
+## RQ3 - Performance ~ Variance
 
-Results: Performance ~ Variance
+To isolate the effect of artificial "blurriness" in high-variance settings, we related the observed variance (SD of canopy height representing spatial variability) to error metrics across the different N x N pixel windows. Following our hypothesis and empirical insights until this point we would expect that for AEF, errors increase with increasing spatial variance, while for TESSERA and STM this relationship should be less strong. 
 
-To isolate the effect of artificial "blurriness" in high-variance settings, we relate SD CH (representing spatial variability) to error metrics per NxN pixel windows.
+{{< figure src="/images/blurryvision/performance_variance_scheme.jpg" alt="Schematic graph of hypothesis indicating decreasing performance with increasing spatial variance for AEF while STM and TESSERA remain constant performance. 
+" width="600px" >}}
 
-Following our hypothesis and empirical insights until this point we would expect
+Median trend lines for RMSE error metric indicate that this pattern is indeed present, although errors tend to increase across all input features and the differences between features are not very high. Nevertheless, we can show that compared to STM, AEF has lower errors in low-variance settings and higher errors in high-variance settings, partly confirming our initial hypothesis. This pattern holds true across window sizes but tends to average out when window sizes increase beyond 50 pixels. Similarly, it holds across RMSE, MAE, and ME. Nevertheless, we want to stress that the signal remains relatively weak, and differences are likely not statistically significant. 
 
-{{< figure src="/images/blurryvision/performance_variance_scheme.jpg" alt="caption" width="600px" >}}
+{{< figure src="/images/blurryvision/results_performance_variance.jpg" alt="Median trends of ME and RMSE per bin of standard deviation in reference canopy height for 5x5, 10x10, and 25x25 pixel windows. Colors indicate different input features used." width="600px" >}}
 
-Median trend lines indicate this trend for some variance value ranges.
-Compared to STM, AEF has 
-lower errors in low-variance settings 
-higher errors in high-variance settings
-Signal remains weak…
+# Takeaways
 
-{{< figure src="/images/blurryvision/results_performance_variance.jpg" alt="caption" width="600px" >}}
+The experiment yielded four takeaways which motivate further research: 
 
-# Discussion
+1)	The performance of using GE in default workflows remains sensitive to methodological choices and these vary with input features. While trying to minimize these, the parameter space for adjusting the canopy height estimation workflow is still large with respect to, e.g. model choice, hyperparameters, the sampling scheme for selecting training and test data (purely random vs. stratified, and in the case of stratified sampling also the number and size of bins), and additional application-specific parameters such as the selection of the most appropriate canopy height metrics (i.e., mean vs. median vs. max at the 10m level). 
 
-CH estimation - how to narrow down the parameter space?
-CH metrics: mean, median, max…
-Regression models: justification for either approach possible
-Sampling schemes: random or stratified (+ N bins)
+2)	Isolating and quantifying visual effects and artefacts in GE predictions such as "blur", or "noise" should be addressed more routinely. The problem at hand appears to be complex and distilling a measure of the desired effect (blurriness) is challenging, but further research could aim at testing more diverse measures of spatial autocorrelation, or advanced image processing metrics. 
 
-How to better isolate and quantify "blurryness"?
-Measures of spatial autocorrelation?
-Image processing or computer vision approaches?
+3)	Given the complexity of the AEF architecture, we can merely assume the reason for the effect of blurriness. First, smooth continuous training targets and regional bias as mentioned above may not lead to strong activation of the Precision block in comparison to the Space and Time blocks. Second, the AEF architecture features an initial spatial downsampling step decreasing the spatial resolution of the inputs by half before passing the inputs to the Space Time Precision encoder for learning which enhances computational efficiency but may contribute to the observed blurriness. Third, STP encoder blends CNN (Precision) and attention blocks (Space, Time), the latter of which is running with coarser patch dimensions compared to the CNN (Precision) block.
 
-TESSERA
-Artefacts - is this a common pattern in TESSERA?
-Invited co-authors to contribute 
+4)	Contrary to our expectations motivated by the literature, we were surprised that pixel-level GE such as TESSERA did not yield similar or higher performance compared to AEF and STM. This also involves the question of dimensionality, as TESSERA has a more nuanced representation with 128 dimensions as compared to the 64 dimensions of AEF. However, the spatial patterns in the TESSERA predictions indicate that there may be issues related to the pixel-level GE in our study region, which needs further investigation. 
 
-We are fishing in the dark - what are your thoughts? Is it worthwile to continue?
+We would be interested in learning about your thoughts on this topic, so feel free to reach out!
