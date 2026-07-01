@@ -4,7 +4,7 @@ title: "Blurry Vision - Do learning paradigms in context-aware Earth embeddings 
 tags: [ "deep_learning", "embeddings", "ai"]
 
 date: 2026-07-01T20:38:29-07:00
-draft: falase
+draft: false
 ---
 
 # Geospatial Embeddings
