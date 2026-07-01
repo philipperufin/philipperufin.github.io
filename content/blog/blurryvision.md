@@ -43,12 +43,14 @@ RQ 3: How accurately is actual spatial variability in canopy height represented 
 # Experiment
 
 ## Study region
+
 We explore canopy height estimation in Miombo woodlands in and around Gilé National Park, Mozambique. This is a heterogeneous, often open woody landscape with smallholder farmers relying on shifting cultivation, and regular fire occurrence.
 
 ## Reference data
+
 We use an aerial LiDAR Canopy Height Model at 1m resolution for the year 2022 (source: https://doi.org/10.1038/s43247-024-01448-x), aggregated to 10m using mean resampling.
 
-{{< figure src="/images/blurryvision/aoi.jpg" alt="Study area and 1 m canopy height model used here. For reference, aggregation windows of 5, 10, 25, and 50 Sentinel-2 pixels are visualized" width="600px" >}}
+{{< figure src="/images/blurryvision/aoi.jpg" alt="Study area and 1 m canopy height model used here. For reference, aggregation windows of 5, 10, 25, and 50 Sentinel-2 pixels are visualized" width="600px">}}
 
 ## Input features
 
@@ -61,14 +63,13 @@ TESSERA v1.1 embeddings were selected as pixel-level GE, based on Sentinel-2 and
 
 ## Workflow
 
-{{< figure src="/images/blurryvision/experiment.jpg" alt="Experimental setup" width="600px" >}}
+{{< figure src="/images/blurryvision/experiment.jpg" alt="Experimental setup" width="600px">}}
 
 We produced a stratified random sample (bins of 5m canopy height intervals with 1,000 samples in each bin) on the 10m aggregated mean canopy height layer and extracted the different input features for each sample. To evaluate the suitability of shallow ML models, we trained Random Forest Regressions, Support Vector Regressions, and XGBoost models with a 20-fold permutation varying the train / test split (70%/30%), predicted canopy height for the test samples, and evaluated the distribution of performance scores. Model evaluation was based on RMSE, MAE, ME, as well as R², intercept and slope of linear model between observed and predicted canopy height. 
 
 We then produced spatial predictions to compare spatial patterns and variance between predictions. Comparison of global performance metrics (RMSE, MAE, R², etc.) across input features and models (XGBoost (XGB), Support Vector Regression (SVR), Random Forest Regression (RFR)). We deliberately chose to rely on shallow pixel-based ML algorithms for the canopy height predictions and did not test spatially aware CNNs to not conflate the spatial detail in the high-variance setting. This is potentially a self-imposed restriction on maximum attainable performance in this case but many users of GE oftentimes will rely on such shallow ML models. 
 
 Local spatial variance metrics were quantified by calculating mean, median, range, and standard deviation of canopy height between STM, AEF, TESSERA and reference (CHM) across non-overlapping windows of varying sizes (5x5, 10x10, 25x25 pixels) and comparing their statistical distributions. This was done to assess whether STMs, AEF, and TESSERA have varying distributions in terms of local spatial variance and to what extent it differs from the observed spatial variance. We then conclude the experiment by relating the observed performance to bins of spatial variance, investigating the question whether performance differences across the different input features are related to spatial variance.
-
 
 # Results
 
@@ -107,8 +108,7 @@ But the question remains if the higher variance in STM predictions is actual (tr
 
 To isolate the effect of artificial "blurriness" in high-variance settings, we related the observed variance (SD of canopy height representing spatial variability) to error metrics across the different N x N pixel windows. Following our hypothesis and empirical insights until this point we would expect that for AEF, errors increase with increasing spatial variance, while for TESSERA and STM this relationship should be less strong. 
 
-{{< figure src="/images/blurryvision/performance_variance_scheme.jpg" alt="Schematic graph of hypothesis indicating decreasing performance with increasing spatial variance for AEF while STM and TESSERA remain constant performance. 
-" width="600px" >}}
+{{< figure src="/images/blurryvision/performance_variance_scheme.jpg" alt="Schematic graph of hypothesis indicating decreasing performance with increasing spatial variance for AEF while STM and TESSERA remain constant performance." width="600px" >}}
 
 Median trend lines for RMSE error metric indicate that this pattern is indeed present, although errors tend to increase across all input features and the differences between features are not very high. Nevertheless, we can show that compared to STM, AEF has lower errors in low-variance settings and higher errors in high-variance settings, partly confirming our initial hypothesis. This pattern holds true across window sizes but tends to average out when window sizes increase beyond 50 pixels. Similarly, it holds across RMSE, MAE, and ME. Nevertheless, we want to stress that the signal remains relatively weak, and differences are likely not statistically significant. 
 
