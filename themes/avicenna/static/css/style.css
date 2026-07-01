@@ -280,23 +280,16 @@ h2 code {
 .blog-content ul,
 .blog-content ol,
 .blog-content figure {
-    max-width: 1024px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
-
 .blog-content p {
     text-align: justify;
 }
-
-.blog-content h1,
-.blog-content h2,
-.blog-content h3,
-.blog-content h4,
 .blog-content figure {
     text-align: center;
 }
-
 .blog-content ul,
 .blog-content ol {
     text-align: left;
