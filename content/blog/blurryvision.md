@@ -134,4 +134,6 @@ Given the complexity of the AEF architecture, we can merely assume the reason fo
 
 Contrary to our expectations motivated by the literature, we were surprised that pixel-level GE such as TESSERA did not yield similar or higher performance compared to AEF and STM. This also involves the question of dimensionality, as TESSERA has a more nuanced representation with 128 dimensions as compared to the 64 dimensions of AEF. However, the spatial patterns in the TESSERA predictions indicate that there may be issues related to the pixel-level GE in our study region, which needs further investigation. 
 
-We would be interested in learning about your thoughts on this topic, so feel free to reach out!
+This post was developed jointly with the DL4EO Special Interest Group with inputs from Jan Hemmerling, Leon-Friedrich Thomas Pauline Hammer, and inputs from Madeline Lisaius (University of Cambridge) as well as several members of the [EOLab (Humboldt-Universität zu Berlin)](https://eolab.geographie.hu-berlin.de/). 
+
+We would be interested in learning about your thoughts on this topic, so please feel free to [reach out](mailto:philippe.rufin@uclouvain.be?subject=Blurry%20Vision)!
