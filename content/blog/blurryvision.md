@@ -1,7 +1,7 @@
 ---
 title: "Blurry Vision?"
 
-tags: [ "deep_learning", "embeddings", "ai"]
+tags: [ "deep learning", "earth observation", "embeddings"]
 
 date: 2026-07-01T00:00:00-00:00
 draft: false
