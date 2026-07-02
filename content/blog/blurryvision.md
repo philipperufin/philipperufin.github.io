@@ -6,9 +6,7 @@ tags: [ "deep_learning", "embeddings", "ai"]
 date: 2026-07-01T00:00:00-00:00
 draft: false
 ---
-##Do learning paradigms in context-aware Earth embeddings suppress spatial variability?
-
-## Geospatial Embeddings
+**Do learning paradigms in context-aware Earth embeddings suppress spatial variability?**
 
 Geospatial embeddings (GE) offer user-friendly representations of large EO image archives with competitive performance across numerous predictive mapping applications. A wealth of GE are available, including Alpha Earth Foundations, TESSERA, or Major TOM. 
 
@@ -30,16 +28,19 @@ One potential reason behind this effect may be that AEF optimizes the reconstruc
 
 We want to explore this issue as a potential limitation of AEF in specific downstream applications where spatial variability is highly relevant, such as canopy height or biomass estimation.
 
+--- 
+
 ## Hypothesis 
 
 Current learning paradigms in spatially context-aware embeddings, such as AlphaEarth v1, dampen spatial variability in high-variance contexts, e.g. canopy height estimation. 
 
 ## Research Questions
 
-- RQ 1: Which shallow ML model setup performs best for canopy height (CH) estimation?
-- RQ 2: How does CH estimation performance differ between hand-crafted features (optical + radar STM), pixel-level (TESSERA) and context-aware (AEF) geospatial embeddings?
-- RQ 3: How accurately is actual spatial variability in canopy height represented in predictions based on pixel-level vs. context-aware features?
+- **RQ 1**: Which shallow ML model setup performs best for canopy height (CH) estimation?
+- **RQ 2**: How does CH estimation performance differ between hand-crafted features (optical + radar STM), pixel-level (TESSERA) and context-aware (AEF) geospatial embeddings?
+- **RQ 3**: How accurately is actual spatial variability in canopy height represented in predictions based on pixel-level vs. context-aware features?
 
+--- 
 
 ## Experiment
 
@@ -55,12 +56,11 @@ We use an aerial LiDAR Canopy Height Model at 1m resolution for the year 2022 (s
 
 ### Input features
 
-As hand-crafted input features, we use bi-seasonal spectral-temporal metrics (STM) from Sentinel-1 and Sentinel-2 time series, comprising a total of 264 features per pixel.
+- **STM**: As hand-crafted input features, we use bi-seasonal spectral-temporal metrics (STM) from Sentinel-1 and Sentinel-2 time series, comprising a total of 264 features per pixel.
 
-Regarding context-aware GE we consider Alpha Earth Foundations (AEF) v1, which condense Sentinel-1, Sentinel-2 and Landsat time series into a 64-dimensional vector. 
+- **AEF**: Regarding context-aware GE we consider Alpha Earth Foundations (AEF) v1, which condense Sentinel-1, Sentinel-2 and Landsat time series into a 64-dimensional vector. 
 
-TESSERA v1.1 embeddings were selected as pixel-level GE, based on Sentinel-2 and Sentinel-1 time series which are represented as a 128-dimensional vector.
-
+- **TESSERA**: TESSERA v1.1 embeddings were selected as pixel-level GE, based on Sentinel-2 and Sentinel-1 time series which are represented as a 128-dimensional vector.
 
 ### Workflow
 
@@ -71,6 +71,8 @@ We produced a stratified random sample (bins of 5m canopy height intervals with 
 We then produced spatial predictions to compare spatial patterns and variance between predictions. Comparison of global performance metrics (RMSE, MAE, R², etc.) was conducted across input features (STM, AEF, TESSERA) and models (XGBoost (XGB), Support Vector Regression (SVR), Random Forest Regression (RFR)). We deliberately chose to rely on shallow pixel-based ML algorithms for the canopy height predictions and did not test spatially aware CNNs to not conflate the spatial detail in the high-variance setting. This is potentially a self-imposed restriction on maximum attainable performance in this case but many users of GE oftentimes will rely on such shallow ML models. 
 
 Local spatial variance metrics were quantified by calculating mean, median, range, and standard deviation of canopy height between STM, AEF, TESSERA and reference (CHM) across non-overlapping windows of varying sizes (5x5, 10x10, 25x25 pixels) and comparing their statistical distributions. This was done to assess whether STMs, AEF, and TESSERA have varying distributions in terms of local spatial variance and to what extent it differs from the observed spatial variance. We then conclude the experiment by relating the observed performance to bins of spatial variance, investigating the question whether performance differences across the different input features are related to spatial variance.
+
+--- 
 
 ## Results
 
@@ -115,6 +117,8 @@ Median trend lines for RMSE error metric indicate that this pattern is indeed pr
 
 {{< figure src="/images/blurryvision/results_performance_variance.png" caption="Median trends of ME and RMSE per bin of standard deviation in reference canopy height for 5x5, 10x10, and 25x25 pixel windows. Colors indicate different input features used." width="650px" >}}
 
+--- 
+
 ## Takeaways
 
 The experiment yielded four takeaways which motivate further research: 
@@ -137,6 +141,6 @@ Contrary to our expectations motivated by the literature, we were surprised that
 
 ### Contributors
 
-This post was developed jointly with the DL4EO Special Interest Group with inputs from Jan Hemmerling, Leon-Friedrich Thomas and Pauline Hammer. We are grateful for valuable inputs from TESSERA author Madeline Lisaius (University of Cambridge) as well as members of the [EOLab (Humboldt-Universität zu Berlin)](https://eolab.geographie.hu-berlin.de/). 
+This post was developed jointly with the DL4EO Special Interest Group with inputs from Jan Hemmerling, Leon-Friedrich Thomas and Pauline Hammer. We are grateful for valuable inputs from TESSERA author Madeline Lisaius (University of Cambridge) as well as members of the [EOLab (Humboldt-Universität zu Berlin)](https://eolab.geographie.hu-berlin.de/). We gratefully acknowledge access to the canopy height data granted by Miro Demol and Sylvera Ltd.
 
 We would be interested in learning about your thoughts on this topic, so please feel free to [reach out](mailto:philippe.rufin@uclouvain.be?subject=Blurry%20Vision)!
