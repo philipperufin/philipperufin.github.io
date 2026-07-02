@@ -38,4 +38,4 @@ Most importantly, our  analysis depends on commercial satellite imagery that is 
 - **Pseudo-label generation code**: Code for producing training pseudo-labels - [code](https://github.com/philipperufin/pseudo-fields/)
 - **DECODE framework**: Model training, inference, and watershed segmentation - [code](https://github.com/waldnerf/decode/)
 - **Inference & post-processing code**: Supplementary code for national-scale inference - [code](https://github.com/philipperufin/smallholder-fields/)
-- **Supplementary materials**: Methods appendix, additional figures and tables - [pdf](https://doi.org/10.1088/1748-9326/ae5cb4/data1) |
+- **Supplementary materials**: Methods appendix, additional figures and tables - [pdf](https://doi.org/10.1088/1748-9326/ae5cb4/data1)
