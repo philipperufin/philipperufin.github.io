@@ -50,7 +50,7 @@ We explore canopy height estimation in Miombo woodlands in and around Gilé Nati
 
 ### Reference data
 
-We use an aerial LiDAR Canopy Height Model at 1m resolution for the year 2022 (source: [Demol et al. 2024](https://doi.org/10.1038/s43247-024-01448-x)), aggregated to 10 m using mean resampling.
+We use an aerial LiDAR Canopy Height Model at 1m resolution for the year 2022 ([Demol et al. 2024](https://doi.org/10.1038/s43247-024-01448-x)), aggregated to 10 m using mean resampling.
 
 {{< figure src="/images/blurryvision/aoi.jpg" caption="Study area and 1 m canopy height model used here. For reference, aggregation windows of 5, 10, 25, and 50 Sentinel-2 pixels are visualized" width="650px">}}
 
